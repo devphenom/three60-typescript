@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginWrapper = styled.section`
+export const AuthWrapper = styled.section`
   width: 50%;
   background-color: white;
   display: flex;

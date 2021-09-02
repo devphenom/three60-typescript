@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { Hero } from "./Homepage.style";
 import { H1, Icon } from "../../components/Globals.styles";
-import Login from "../../components/Login/Login";
+import Auth from "../../components/Login/Auth";
 import { faBookmark, faStickyNote } from "@fortawesome/free-regular-svg-icons";
 
 const Homepage = () => {
-  const [authType, setAuthType] = useState("login");
-
   return (
     <Hero>
       <section id="hero-container">
@@ -34,11 +32,7 @@ const Homepage = () => {
         </div>
       </section>
 
-      {authType === "login" ? (
-        <Login auth={setAuthType} />
-      ) : (
-        <div>Hello World</div>
-      )}
+      <Auth />
     </Hero>
   );
 };

@@ -5,6 +5,7 @@ export const Hero = styled.div`
   width: 100%;
   display: flex;
   line-height: 1.8rem;
+  min-height: 100vh;
 
   @media screen and (max-width: 435px) {
     /* min-height: 100vh; */
