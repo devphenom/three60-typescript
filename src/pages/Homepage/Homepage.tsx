@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { Hero } from "./Homepage.style";
 import { H1, Icon } from "../../components/Globals.styles";
