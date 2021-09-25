@@ -5,8 +5,8 @@ interface ButtonProps {
 }
 
 export const StyledButton = styled.button<ButtonProps>`
-  width: 203px;
-  height: 46px;
+  padding: 10px 20px;
+  /* height: 46px; */
   color: white;
   cursor: pointer;
   background: ${({ bgColor }) => bgColor || "#28ba63"};

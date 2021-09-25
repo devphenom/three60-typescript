@@ -1,14 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import { StyledTitle } from "./Title.styles";
 
 interface TitleProps {
   text: string;
   children: React.ReactNode;
 }
-const Title = ({ text, children }) => {
+const Title: FC<TitleProps> = ({ text, children }) => {
   return (
     <StyledTitle>
-      <h1>{`${"0"} ${text}`}</h1>
+      <h1>{text}</h1>
       {children}
     </StyledTitle>
   );

@@ -1,5 +1,3 @@
-import { Hamburger } from "./Navbar";
-import { screen } from "@testing-library/react";
 import styled from "styled-components";
 
 interface BurgerProps {

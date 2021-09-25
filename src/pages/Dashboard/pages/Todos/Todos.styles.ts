@@ -12,7 +12,7 @@ export const StyledTodoMain = styled.section`
 
 export const StyledTodoArea = styled.div`
   width: 75%;
-  padding-top: 20px;
+  padding-top: 30px;
 `;
 
 export const StyledPreview = styled.aside`
