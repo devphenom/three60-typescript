@@ -5,7 +5,7 @@ import "./App.css";
 
 import { useState } from "react";
 import Homepage from "./pages/Homepage/Homepage";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 const App = () => {
   return (

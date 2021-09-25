@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { AuthWrapper } from "./Auth.styles";
-import Logo from "./three60.png";
+import { Logo } from "../Globals.styles";
+import LogoImg from "./three60.png";
 
 type FormData = {
   email: string;
@@ -17,10 +18,10 @@ const Auth = () => {
   return (
     <AuthWrapper>
       <div id="login">
-        <div id="logo">
-          <img src={Logo} alt="logo" />
+        <Logo>
+          <img src={LogoImg} alt="logo" />
           <span>three60</span>
-        </div>
+        </Logo>
         <div>
           {authType === "login" ? (
             <h2>Welcome Back</h2>

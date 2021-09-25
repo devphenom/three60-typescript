@@ -21,17 +21,6 @@ export const AuthWrapper = styled.section`
       width: 80%;
     }
 
-    #logo {
-      display: flex;
-      align-items: center;
-
-      span {
-        font-weight: bold;
-        font-size: 24px;
-        color: #2468eb;
-      }
-    }
-
     form {
       display: flex;
       flex-direction: column;
