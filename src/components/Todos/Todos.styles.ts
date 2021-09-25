@@ -10,6 +10,11 @@ export const StyledTodoMain = styled.section`
   display: flex;
 `;
 
+export const StyledTodoArea = styled.div`
+  width: 75%;
+  padding-top: 20px;
+`;
+
 export const StyledPreview = styled.aside`
   background-color: white;
   width: 20%;

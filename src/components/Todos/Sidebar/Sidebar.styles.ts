@@ -12,7 +12,7 @@ export const StyledSidebar = styled.div`
   }
 
   height: 90vh;
-  width: 150px;
+  width: 15%;
   background-color: #e5e5e5;
   /* text-align: center; */
   display: flex;
