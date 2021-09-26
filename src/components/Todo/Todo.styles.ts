@@ -9,8 +9,11 @@ export const StyledTodo = styled.div`
   justify-content: space-between;
   margin-top: 10px;
   padding: 10px;
-  /* width: 100%; */
-  div {
+  cursor: pointer;
+  width: 100%;
+  flex-wrap: wrap;
+
+  #todo {
     p {
       &:last-child {
         font-size: 0.8rem;
@@ -41,6 +44,7 @@ export const StyledTodo = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
+    /* z-index: 1; */
 
     .dropdown-content {
       display: none;
@@ -66,6 +70,11 @@ export const StyledTodo = styled.div`
 
     &:hover .dropdown-content {
       display: block;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    #todo {
+      width: 100%;
     }
   }
 `;

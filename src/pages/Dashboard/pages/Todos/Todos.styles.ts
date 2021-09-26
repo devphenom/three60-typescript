@@ -8,11 +8,23 @@ export const StyledTodos = styled.div`
 export const StyledTodoMain = styled.section`
   width: 80%;
   display: flex;
+  padding-top: 10px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const StyledTodoArea = styled.div`
   width: 75%;
-  padding-top: 30px;
+  /* padding-top: 30px; */
+
+  @media screen and (max-width: 768px) {
+    /* flex-direction: column; */
+    width: 100%;
+    padding: 25px;
+  }
 `;
 
 export const StyledPreview = styled.aside`
@@ -23,4 +35,8 @@ export const StyledPreview = styled.aside`
   align-items: center;
   justify-content: center;
   text-align: center;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;

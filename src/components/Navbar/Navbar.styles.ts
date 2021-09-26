@@ -69,6 +69,7 @@ export const StyledNavMenu = styled.ul<NavMenuProps>`
   @media only screen and (max-width: 768px) {
     padding: 10px 0;
     position: fixed;
+    z-index: 999;
     top: 5rem;
     display: block;
     background-color: #fff;

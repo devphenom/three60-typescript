@@ -11,16 +11,19 @@ import Title from "../../../../components/Title/Title";
 import Todo from "../../../../components/Todo/Todo";
 import noPreview from "./Vector.png";
 import noTodo from "./Group 3.png";
+
 function Todos() {
   return (
     <StyledTodos>
       <StyledTodoMain>
+        <Button text="Create Note" sm />
+
         <Sidebar />
         <StyledTodoArea>
           <Title text="All Todos">
             <Button text="Create Note" />
           </Title>
-          {/* <div
+          <div
             style={{
               display: "flex",
               alignItems: "center",
@@ -31,12 +34,12 @@ function Todos() {
           >
             <img src={noTodo} alt="no todo" />
             <p style={{ margin: "10px auto" }}>No todos at the moment</p>
-          </div> */}
+          </div>
+          {/* <Todo />
           <Todo />
           <Todo />
           <Todo />
-          <Todo />
-          <Todo />
+          <Todo /> */}
         </StyledTodoArea>
       </StyledTodoMain>
 

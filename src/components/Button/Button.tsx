@@ -4,9 +4,18 @@ import { StyledButton } from "./Button.styles";
 interface ButtonProps {
   text: string;
   bgColor?: string;
+  [x: string]: any;
 }
-const Button: FC<ButtonProps> = ({ text, bgColor }) => {
-  return <StyledButton bgColor={bgColor}>{text}</StyledButton>;
+const Button: FC<ButtonProps> = ({ text, bgColor, sm, ...other }) => {
+  return (
+    <StyledButton bgColor={bgColor} {...other} sm={sm}>
+      {text}
+    </StyledButton>
+  );
 };
 
 export default Button;
+
+// export const MobileBtn : FC<ButtonProps> = ({text, bgColor, ...other}) => {
+//   return StyledMobileBtn
+// }
