@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import LineIcon from "react-lineicons";
+
 export const H1 = styled.h1`
   font-weight: lighter;
   font-size: 48px;
@@ -24,7 +24,8 @@ export const H1 = styled.h1`
 
 export const Icon = styled(FontAwesomeIcon)`
   margin-right: 10px;
-  color: ${(props) => props.color || "#2468EB "};
+  color: ${(props) => props.color || "#2468EB"};
+  font-weight: lighter;
 
   @media screen and (max-width: 768px) {
     margin-right: 5px;

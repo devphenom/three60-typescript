@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Icon } from "../Globals.styles";
 
 interface BurgerProps {
   open: boolean;
@@ -38,14 +39,20 @@ export const StyledNavMenu = styled.ul<NavMenuProps>`
   align-items: center;
   width: 100%;
 
+  /* .navlinks a {
+  } */
   .nav-item {
     margin-left: 5rem;
     cursor: pointer;
-    a {
+    .nav-link {
       font-weight: 400;
-      color: #475569;
+      padding-bottom: 20px;
+      color: #777777;
       &:hover {
         color: #482ff7;
+      }
+      &.active {
+        border-bottom: 3px solid #482ff7;
       }
     }
     &:last-child {

@@ -1,6 +1,13 @@
 import styled from "styled-components";
+interface CategoryObj {
+  tagColor: string;
+  color: string;
+}
+interface TodoProps {
+  category: CategoryObj;
+}
 
-export const StyledTodo = styled.div`
+export const StyledTodo = styled.div<TodoProps>`
   background: #ffffff;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -22,24 +29,26 @@ export const StyledTodo = styled.div`
       }
     }
   }
-  span {
-    padding: 10px;
+
+  #tag {
+    padding: 10px 20px;
     font-size: 0.9rem;
     text-align: center;
-    background: rgba(70, 115, 228, 0.06);
+    background: ${({ category }) => category.tagColor};
+    color: ${({ category }) => category.color};
     border-radius: 30px;
   }
 
-  button {
+  #more {
     display: inline-block;
     border: none;
     padding: 1rem;
     margin: 0;
     text-decoration: none;
-    font-family: sans-serif;
     font-size: 1rem;
     cursor: pointer;
     text-align: center;
+    background: none;
     transition: background 250ms ease-in-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;

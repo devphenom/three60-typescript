@@ -4,23 +4,27 @@ import {
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import React from "react";
+import React, { FC } from "react";
 
 import Button from "../Button/Button";
 import { Icon } from "../Globals.styles";
 import { StyledTodo } from "./Todo.styles";
+import { TodoData } from "../../pages/Todos/Todos";
 
-const Todo = () => {
+import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
+
+const Todo = ({ todo }) => {
   return (
-    <StyledTodo>
+    <StyledTodo category={getCategory(todo.tag)}>
       <div id="todo">
-        <p>
-          Create an endpoint to get the list of users available in the database
-        </p>
-        <p>Created on 13th July 2019 at 08:33am</p>
+        <p>{todo.name}</p>
+        <p>{`Created on ${getDate(todo.date)} at ${getTime(todo.date)}`}</p>
       </div>
-      <span>In Progress</span>
-      <button>
+      <span id="tag">
+        {capitalizeTag(todo.tag)}
+        {/* {todo.tag.charAt(0).toUppercase() + todo.tag.slice(1)} */}
+      </span>
+      <button id="more">
         <Icon icon={faEllipsisH} color="black" />
 
         <div className="dropdown-content">

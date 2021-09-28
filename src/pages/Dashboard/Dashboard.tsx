@@ -1,8 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import Todos from "./pages/Todos/Todos";
+import Todos from "../Todos/Todos";
 import { StyledDashboard } from "./Dashboard.styles";
 
 const Dashboard = () => {
@@ -12,7 +11,6 @@ const Dashboard = () => {
       <Switch>
         <Route path="/dashboard" component={Todos} />
       </Switch>
-      {/* <Sidebar /> */}
     </StyledDashboard>
   );
 };

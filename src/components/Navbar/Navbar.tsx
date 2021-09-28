@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { NavWrapper, StyledBurger, StyledNavMenu } from "./Navbar.styles";
 import { Logo, Icon } from "../Globals.styles";
 import LogoImg from "./three60.png";
@@ -16,16 +16,22 @@ interface BurgerProps {
 export const NavMenu = ({ open }) => (
   <StyledNavMenu open={open}>
     <li className="nav-item">
-      <Icon icon={faHourglass} />
-      <Link to="/">Todos</Link>{" "}
+      <NavLink to="/" activeClassName="active" className="nav-link">
+        <Icon icon={faHourglass} />
+        Todos
+      </NavLink>{" "}
     </li>
     <li className="nav-item">
-      <Icon icon={faStickyNote} />
-      <Link to="/">Notes</Link>{" "}
+      <NavLink to="/notes" activeClassName="active" className="nav-link">
+        <Icon icon={faStickyNote} />
+        Notes
+      </NavLink>{" "}
     </li>
     <li className="nav-item">
-      <Icon icon={faLink} />
-      <Link to="/">Links</Link>{" "}
+      <NavLink to="/links" activeClassName="active" className="nav-link">
+        <Icon icon={faLink} />
+        Links
+      </NavLink>{" "}
     </li>
     <li className="nav-item">
       <LineIcon name="search-alt" />
@@ -51,12 +57,12 @@ const Navbar = () => {
   return (
     <NavWrapper>
       <nav>
-        <Link to="/">
+        <NavLink to="/">
           <Logo>
             <img src={LogoImg} alt="logo" />
             <span>three60</span>
           </Logo>
-        </Link>
+        </NavLink>
         <NavMenu open={open} />
         <Hamburger open={open} toggleOpen={toggle} />
       </nav>

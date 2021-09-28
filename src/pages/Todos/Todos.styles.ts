@@ -8,7 +8,7 @@ export const StyledTodos = styled.div`
 export const StyledTodoMain = styled.section`
   width: 80%;
   display: flex;
-  padding-top: 10px;
+  padding-top: 30px;
 
   @media screen and (max-width: 768px) {
     flex-direction: column;
