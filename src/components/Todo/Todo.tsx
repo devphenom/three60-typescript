@@ -1,17 +1,16 @@
+import React, { FC } from "react";
+import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import {
   faEdit,
   faSquare,
   faTrashAlt,
 } from "@fortawesome/free-regular-svg-icons";
-import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import React, { FC } from "react";
 
+import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
 import Button from "../Button/Button";
 import { Icon } from "../Globals.styles";
 import { StyledTodo } from "./Todo.styles";
 import { TodoData } from "../../pages/Todos/Todos";
-
-import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
 
 const Todo = ({ todo }) => {
   return (
