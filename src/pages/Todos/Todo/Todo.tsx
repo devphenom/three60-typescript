@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import {
   faEdit,
@@ -7,12 +7,16 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
-import Button from "../Button/Button";
-import { Icon } from "../Globals.styles";
+import { Icon } from "../../../components/Globals.styles";
 import { StyledTodo } from "./Todo.styles";
-import { TodoData } from "../../pages/Todos/Todos";
+import { TodoData } from "../Todos";
 
-const Todo = ({ todo }) => {
+interface TodoProps {
+  todo: TodoData;
+}
+
+const Todo = (props: TodoProps) => {
+  const { todo } = props;
   return (
     <StyledTodo category={getCategory(todo.tag)}>
       <div id="todo">

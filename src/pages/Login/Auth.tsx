@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import { AuthWrapper } from "./Auth.styles";
-import { Logo } from "../Globals.styles";
+import { Logo } from "../../components/Globals.styles";
 import LogoImg from "./three60.png";
 
 type FormData = {

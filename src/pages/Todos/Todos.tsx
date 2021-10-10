@@ -1,106 +1,101 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../../components/Sidebar/Sidebar";
-import {
-  StyledTodos,
-  StyledTodoMain,
-  StyledTodoArea,
-  StyledPreview,
-} from "./Todos.styles";
+import Sidebar from "./TodoSidebar/Sidebar";
+import { StyledTodos, StyledTodoMain, StyledTodoArea } from "./Todos.styles";
 import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
-import Todo from "../../components/Todo/Todo";
-import noPreview from "./Vector.png";
+import Todo from "./Todo/Todo";
 import noTodo from "./Group 3.png";
+import TodoAside from "./TodoAside/TodoAside";
 
 export interface TodoData {
   name: string;
-  date: object;
+  date: string;
   tag: string;
 }
 
 const todoData: TodoData[] = [
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "in-progress",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "backlog",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "completed",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "overdue",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "trash",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "backlog",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "completed",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "overdue",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "in-progress",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "in-progress",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "in-progress",
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
-    date: new Date(),
+    date: new Date().toDateString(),
     tag: "in-progress",
   },
 ];
 
 const Todos = () => {
-  const [todo, setTodo] = useState<TodoData[]>([]);
+  const [todos, setTodos] = useState<TodoData[]>([]);
 
   useEffect(() => {
-    setTodo(todoData);
+    setTodos(todoData);
     console.log(todoData);
-  }, [todoData]);
+  }, []);
 
   return (
     <StyledTodos>
       <StyledTodoMain>
+        <Sidebar />
         <Button text="Create Note" sm />
 
-        <Sidebar />
         <StyledTodoArea>
           <Title text="All Todos">
             <Button text="Create Note" />
           </Title>
-          {todoData.length > 1 ? (
-            todoData.map((todo) => <Todo todo={todo} />)
+          {todos.length > 1 ? (
+            todos.map((todo) => <Todo todo={todo} />)
           ) : (
             <div
               style={{
@@ -117,13 +112,7 @@ const Todos = () => {
           )}
         </StyledTodoArea>
       </StyledTodoMain>
-
-      <StyledPreview>
-        <img src={noPreview} alt="no preview" />
-        <p style={{ margin: "10px auto" }}>
-          No open todo/note is currently opened until you create a task
-        </p>
-      </StyledPreview>
+      <TodoAside />
     </StyledTodos>
   );
 };

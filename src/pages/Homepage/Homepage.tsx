@@ -2,7 +2,7 @@ import React from "react";
 import { faListUl } from "@fortawesome/free-solid-svg-icons";
 import { Hero } from "./Homepage.style";
 import { H1, Icon } from "../../components/Globals.styles";
-import Auth from "../../components/Login/Auth";
+import Auth from "../Login/Auth";
 import { faBookmark, faStickyNote } from "@fortawesome/free-regular-svg-icons";
 
 const Homepage = () => {

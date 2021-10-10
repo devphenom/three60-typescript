@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { NavWrapper, StyledBurger, StyledNavMenu } from "./Navbar.styles";
 import { Logo, Icon } from "../Globals.styles";
 import LogoImg from "./three60.png";
+// @ts-ignore
 import LineIcon from "react-lineicons";
 import { FC } from "react";
 import { faHourglass, faStickyNote } from "@fortawesome/free-regular-svg-icons";
@@ -10,11 +11,11 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 interface BurgerProps {
   open: boolean;
-  toggleOpen: any;
+  toggleOpen?: any;
 }
 
-export const NavMenu = ({ open }) => (
-  <StyledNavMenu open={open}>
+export const NavMenu = (props: BurgerProps) => (
+  <StyledNavMenu open={props.open}>
     <li className="nav-item">
       <NavLink to="/" activeClassName="active" className="nav-link">
         <Icon icon={faHourglass} />

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Icon } from "../Globals.styles";
 
 interface BurgerProps {
   open: boolean;

@@ -9,7 +9,7 @@ export const getTime = (date: string) => {
   return `${hours}:${min}`;
 };
 
-export const getCategory = (tag) => {
+export const getCategory = (tag: string) => {
   let tagColor: string;
   let color: string;
   switch (tag) {
