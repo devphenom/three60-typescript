@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTodos = styled.div`
+  margin-top: 80px;
   background-color: #e5e5e5;
   display: flex;
 `;

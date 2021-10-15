@@ -17,19 +17,31 @@ interface BurgerProps {
 export const NavMenu = (props: BurgerProps) => (
   <StyledNavMenu open={props.open}>
     <li className="nav-item">
-      <NavLink to="/" activeClassName="active" className="nav-link">
+      <NavLink
+        to="/dashboard/todos"
+        activeClassName="active"
+        className="nav-link"
+      >
         <Icon icon={faHourglass} />
         Todos
       </NavLink>{" "}
     </li>
     <li className="nav-item">
-      <NavLink to="/notes" activeClassName="active" className="nav-link">
+      <NavLink
+        to="/dashboard/notes"
+        activeClassName="active"
+        className="nav-link"
+      >
         <Icon icon={faStickyNote} />
         Notes
       </NavLink>{" "}
     </li>
     <li className="nav-item">
-      <NavLink to="/links" activeClassName="active" className="nav-link">
+      <NavLink
+        to="/dashboard/links"
+        activeClassName="active"
+        className="nav-link"
+      >
         <Icon icon={faLink} />
         Links
       </NavLink>{" "}
