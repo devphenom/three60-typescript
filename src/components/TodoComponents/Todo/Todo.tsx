@@ -7,9 +7,9 @@ import {
 } from "@fortawesome/free-regular-svg-icons";
 
 import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
-import { Icon } from "../../../components/Globals.styles";
+import { Icon } from "../../Globals.styles";
 import { StyledTodo } from "./Todo.styles";
-import { TodoData } from "../Todos";
+import { TodoData } from "../../../pages/Todos/Todos";
 
 interface TodoProps {
   todo: TodoData;

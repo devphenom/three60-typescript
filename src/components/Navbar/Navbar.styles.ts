@@ -15,7 +15,7 @@ export const NavWrapper = styled.header`
   padding: 0 20px;
   box-sizing: border-box;
   background-color: white;
-  position: fixed;
+  position: sticky;
   width: 100%;
   top: 0;
   z-index: 1;

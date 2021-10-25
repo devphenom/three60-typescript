@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./TodoSidebar/Sidebar";
+import Sidebar from "../../components/TodoComponents/TodoSidebar/Sidebar";
 import { StyledTodos, StyledTodoMain, StyledTodoArea } from "./Todos.styles";
 import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
-import Todo from "./Todo/Todo";
+import Todo from "../../components/TodoComponents/Todo/Todo";
 import noTodo from "./Group 3.png";
-import TodoAside from "./TodoAside/TodoAside";
+import TodoAside from "../../components/TodoComponents/TodoAside/TodoAside";
 
 export interface TodoData {
   name: string;
@@ -94,7 +94,7 @@ const Todos = () => {
           <Title text="All Todos">
             <Button text="Create Note" />
           </Title>
-          {todos.length > 1 ? (
+          {todos.length ? (
             todos.map((todo) => <Todo todo={todo} />)
           ) : (
             <div
@@ -111,8 +111,8 @@ const Todos = () => {
             </div>
           )}
         </StyledTodoArea>
+        <TodoAside />
       </StyledTodoMain>
-      <TodoAside />
     </StyledTodos>
   );
 };

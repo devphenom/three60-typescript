@@ -42,3 +42,13 @@ export const Logo = styled.div`
     color: #2468eb;
   }
 `;
+
+export const DashboardLayout = styled.div`
+  background-color: #e5e5e5;
+`;
+
+export const SidebarLayout = styled.div`
+  height: 100%;
+  width: 15%;
+  background-color: #e5e5e5;
+`;

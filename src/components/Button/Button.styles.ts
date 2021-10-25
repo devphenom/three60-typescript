@@ -18,6 +18,11 @@ export const StyledButton = styled.button<ButtonProps>`
   @media screen and (max-width: 768px) {
     /* display: none; */
     display: ${({ sm }) => (sm ? "block" : "none")};
-    margin: 20px;
+    position: ${({ sm }) => (sm ? "fixed" : "none")};
+    margin: 10px auto;
+    z-index: 1;
+    /* left: 0; */
+    overflow-x: hidden;
+    width: 80%;
   }
 `;
