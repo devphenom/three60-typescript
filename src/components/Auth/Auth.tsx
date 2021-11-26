@@ -7,7 +7,7 @@ import {
 } from "react-google-login";
 
 import { AuthWrapper } from "./Auth.styles";
-import { Logo } from "../../components/Globals.styles";
+import { Logo } from "../Globals.styles";
 import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
 import { useHistory } from "react-router";
@@ -77,11 +77,15 @@ const Auth = () => {
             <label htmlFor="email">Email</label>
             <Field name="email" placeholder="johndoe@gmail.com" />
             <label htmlFor="password">Password</label>
-            <Field name="password" placeholder="********" />
+            <Field type="password" name="password" placeholder="********" />
             {isSignup && (
               <>
                 <label htmlFor="password">Confirm Password</label>
-                <Field name="confirmPassword" placeholder="********" />
+                <Field
+                  type="password"
+                  name="confirmPassword"
+                  placeholder="********"
+                />
               </>
             )}
             <button type="submit">Submit</button>

@@ -1,13 +1,13 @@
 import React from "react";
-import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import {
-  faEdit,
-  faSquare,
-  faTrashAlt,
-} from "@fortawesome/free-regular-svg-icons";
+// import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
+// import {
+//   faEdit,
+//   faSquare,
+//   faTrashAlt,
+// } from "@fortawesome/free-regular-svg-icons";
 
 import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
-import { Icon } from "../../Globals.styles";
+// import { Icon } from "../../Globals.styles";
 import { StyledTodo } from "./Todo.styles";
 import { TodoData } from "../../../pages/Todos/Todos";
 
@@ -28,17 +28,17 @@ const Todo = (props: TodoProps) => {
         {/* {todo.tag.charAt(0).toUppercase() + todo.tag.slice(1)} */}
       </span>
       <button id="more">
-        <Icon icon={faEllipsisH} color="black" />
+        {/* <Icon icon={faEllipsisH} color="black" /> */}
 
         <div className="dropdown-content">
           <span className="dropdown-item">
-            <Icon icon={faSquare} /> Mark as complete
+            {/* <Icon icon={faSquare} /> Mark as complete */}
           </span>
           <span className="dropdown-item">
-            <Icon icon={faEdit} /> Edit
+            {/* <Icon icon={faEdit} /> Edit */}
           </span>
           <span className="dropdown-item">
-            <Icon icon={faTrashAlt} /> Delete
+            {/* <Icon icon={faTrashAlt} /> Delete */}
           </span>
         </div>
       </button>

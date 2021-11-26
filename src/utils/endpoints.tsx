@@ -1,6 +1,6 @@
 import { AxiosError } from "axios";
 import { signIn, signUp } from "./api";
-import { FormData } from "../pages/Login/Auth";
+import { FormData } from "../components/Auth/Auth";
 import { setUsers } from "./utils";
 // type guard
 function isAxiosError(error: any): error is AxiosError {
@@ -20,6 +20,10 @@ export const signin = async (
   } catch (error) {
     if (isAxiosError(error)) {
       if (error.response) {
+        console.log({
+          status: error.response?.status,
+          message: error.response?.data.message,
+        });
         return {
           status: error.response?.status,
           message: error.response?.data.message,

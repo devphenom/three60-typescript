@@ -6,6 +6,7 @@ import Title from "../../components/Title/Title";
 import Todo from "../../components/TodoComponents/Todo/Todo";
 import noTodo from "./Group 3.png";
 import TodoAside from "../../components/TodoComponents/TodoAside/TodoAside";
+import Modal from "../../components/TodoComponents/Modal/Modal";
 
 export interface TodoData {
   name: string;
@@ -78,7 +79,7 @@ const todoData: TodoData[] = [
 
 const Todos = () => {
   const [todos, setTodos] = useState<TodoData[]>([]);
-
+  const [modal, setModal] = useState(false);
   useEffect(() => {
     setTodos(todoData);
     console.log(todoData);
@@ -92,7 +93,10 @@ const Todos = () => {
 
         <StyledTodoArea>
           <Title text="All Todos">
-            <Button text="Create Note" />
+            <Button
+              onClick={() => setModal((prevModal) => !prevModal)}
+              text="Create Task"
+            />
           </Title>
           {todos.length ? (
             todos.map((todo) => <Todo todo={todo} />)
@@ -113,6 +117,13 @@ const Todos = () => {
         </StyledTodoArea>
         <TodoAside />
       </StyledTodoMain>
+      {modal ? (
+        <Modal>
+          <div>
+            <h1>Modal Opened</h1>
+          </div>
+        </Modal>
+      ) : null}
     </StyledTodos>
   );
 };

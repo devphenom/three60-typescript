@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { NavWrapper, StyledBurger, StyledNavMenu } from "./Navbar.styles";
-import { Logo, Icon } from "../Globals.styles";
+// import { Logo, Icon } from "../Globals.styles";
 import LogoImg from "./three60.png";
 // @ts-ignore
-import LineIcon from "react-lineicons";
+// import LineIcon from "react-lineicons";
 import { FC } from "react";
-import { faHourglass, faStickyNote } from "@fortawesome/free-regular-svg-icons";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+// import { faHourglass, faStickyNote } from "@fortawesome/free-regular-svg-icons";
+// import { faLink } from "@fortawesome/free-solid-svg-icons";
 
 interface BurgerProps {
   open: boolean;
@@ -22,7 +22,7 @@ export const NavMenu = (props: BurgerProps) => (
         activeClassName="active"
         className="nav-link"
       >
-        <Icon icon={faHourglass} />
+        {/* <Icon icon={faHourglass} /> */}
         Todos
       </NavLink>{" "}
     </li>
@@ -32,7 +32,7 @@ export const NavMenu = (props: BurgerProps) => (
         activeClassName="active"
         className="nav-link"
       >
-        <Icon icon={faStickyNote} />
+        {/* <Icon icon={faStickyNote} /> */}
         Notes
       </NavLink>{" "}
     </li>
@@ -42,12 +42,12 @@ export const NavMenu = (props: BurgerProps) => (
         activeClassName="active"
         className="nav-link"
       >
-        <Icon icon={faLink} />
+        {/* <Icon icon={faLink} /> */}
         Links
       </NavLink>{" "}
     </li>
     <li className="nav-item">
-      <LineIcon name="search-alt" />
+      {/* <LineIcon name="search-alt" /> */}
       <input type="text" />
     </li>
   </StyledNavMenu>
@@ -71,10 +71,10 @@ const Navbar = () => {
     <NavWrapper>
       <nav>
         <NavLink to="/">
-          <Logo>
+          {/* <Logo>
             <img src={LogoImg} alt="logo" />
             <span>three60</span>
-          </Logo>
+          </Logo> */}
         </NavLink>
         <NavMenu open={open} />
         <Hamburger open={open} toggleOpen={toggle} />
