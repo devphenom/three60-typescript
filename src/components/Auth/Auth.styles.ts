@@ -2,28 +2,11 @@ import styled from "styled-components";
 
 export const AuthWrapper = styled.section`
   background-color: white;
-
   padding: 1.5rem;
-
-  /* @media screen and (max-width: 435px) {
-    width: 100%;
-    padding: 40px 0;
-  } */
-
-  /* div { */
-  /* margin-bottom: 10px;
-    
-    @media screen and (max-width: 768px) {
-      width: 80%;
-    } */
 
   h2,
   p {
     margin-top: 0.2rem;
-
-    /* :last-child {
-      color: #979ba9;
-    } */
   }
 
   form {
@@ -46,5 +29,10 @@ export const AuthWrapper = styled.section`
     text-decoration: underline;
   }
 
-  /* } */
+  @media screen and (min-width: 550px) {
+    padding: 1.5rem 5rem;
+  }
+  @media screen and (min-width: 850px) {
+    flex-basis: 50%;
+  }
 `;

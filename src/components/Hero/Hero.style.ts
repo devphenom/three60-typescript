@@ -4,16 +4,11 @@ export const StyledHero = styled.section`
   background-color: #2468eb;
   display: flex;
   flex-flow: wrap column;
-  /* align-items: center; */
   justify-content: center;
   padding: 2rem;
-  /* padding: 50px 120px; */
   color: white;
+  min-height: 100vh;
 
-  /* @media screen and (max-width: 435px) {
-    width: 100%;
-    padding: 40px;
-  } */
   #col-2 {
     flex-basis: 100%;
     display: flex;
@@ -21,11 +16,6 @@ export const StyledHero = styled.section`
     gap: 1rem;
     flex-direction: column;
     justify-content: space-between;
-
-    /* @media screen and (max-width: 325px) {
-        flex-flow: wrap column;
-        align-items: center;
-      } */
 
     .hero-card {
       flex-basis: 80%;
@@ -38,27 +28,25 @@ export const StyledHero = styled.section`
       background-color: white;
       color: #2468eb;
       text-transform: uppercase;
-
-      /* @media screen and (max-width: 768px) {
-          width: 100px;
-          height: 100px;
-          font-size: 0.8rem;
-        }
-
-        @media screen and (max-width: 435px) {
-          width: 120px;
-          height: 120px;
-          font-size: initial;
-        }
-        @media screen and (max-width: 325px) {
-          width: 250px;
-          height: 100px;
-          font-size: 1.8rem;
-        } */
     }
   }
   .hero-text {
     text-align: justify;
     text-justify: inter-word;
+  }
+
+  @media screen and (min-width: 550px) {
+    padding: 1.5rem 5rem;
+  }
+  @media screen and (min-width: 850px) {
+    flex-basis: 50%;
+
+    #col-2 {
+      flex-direction: row;
+
+      .hero-card {
+        padding: 1rem;
+      }
+    }
   }
 `;
