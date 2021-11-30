@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import {
   GoogleLogin,
@@ -12,6 +12,7 @@ import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
 import { useHistory } from "react-router";
 import { getUsers } from "../../utils/utils";
+import Button from "../Button/Button";
 
 export interface FormData {
   email: string;
@@ -59,69 +60,69 @@ const Auth = () => {
   }, []);
   return (
     <AuthWrapper>
-      <div id="login">
-        <Logo>
-          <img src={LogoImg} alt="logo" />
-          <span>three60</span>
-        </Logo>
-        <div>
-          {isSignup ? <h2>Create an account</h2> : <h2>Welcome Back</h2>}
-          <p>Enter your credentials</p>
-        </div>
-        {/* form */}
-        <Formik
-          onSubmit={onSubmit}
-          initialValues={{ email: "", password: "", confirmPassword: "" }}
-        >
-          <Form>
-            <label htmlFor="email">Email</label>
-            <Field name="email" placeholder="johndoe@gmail.com" />
-            <label htmlFor="password">Password</label>
-            <Field type="password" name="password" placeholder="********" />
-            {isSignup && (
-              <>
-                <label htmlFor="password">Confirm Password</label>
-                <Field
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="********"
-                />
-              </>
-            )}
-            <button type="submit">Submit</button>
-          </Form>
-        </Formik>
-        <GoogleLogin
-          clientId={`${process.env.REACT_APP_CLIENT_ID}`}
-          render={(renderProps) => (
-            <button
-              onClick={renderProps.onClick}
-              disabled={renderProps.disabled}
-            >
-              Sign up with Google
-            </button>
-          )}
-          onSuccess={googleSuccess}
-          onFailure={googleFailure}
-          cookiePolicy="single_host_origin"
-        />
-        {/* </form> */}
-        {isSignup ? (
-          <p>
-            Have an account?{" "}
-            <span className="account-alt" onClick={() => setIsSignup(false)}>
-              Login here
-            </span>
-          </p>
-        ) : (
-          <p>
-            Not yet signed up?{" "}
-            <span className="account-alt" onClick={() => setIsSignup(true)}>
-              Create account here
-            </span>
-          </p>
-        )}
+      <Logo>
+        <img src={LogoImg} alt="logo" />
+        <span>three60</span>
+      </Logo>
+      <div id="form-header">
+        <h2>{isSignup ? "Create an account" : "Welcome Back"}</h2>
+        {!isSignup && <p>Enter your credentials</p>}
       </div>
+      {/* form */}
+      <Formik
+        onSubmit={onSubmit}
+        initialValues={{ email: "", password: "", confirmPassword: "" }}
+      >
+        <Form>
+          <label htmlFor="email">Email</label>
+          <Field name="email" placeholder="johndoe@gmail.com" />
+          <label htmlFor="password">Password</label>
+          <Field type="password" name="password" placeholder="********" />
+          {isSignup && (
+            <>
+              <label htmlFor="password">Confirm Password</label>
+              <Field
+                type="password"
+                name="confirmPassword"
+                placeholder="********"
+              />
+            </>
+          )}
+          <Button text="Submit" />
+          {/* <button type="submit">Submit</button> */}
+        </Form>
+      </Formik>
+      <GoogleLogin
+        clientId={`${process.env.REACT_APP_CLIENT_ID}`}
+        render={(renderProps) => (
+          <Button
+            onClick={renderProps.onClick}
+            disabled={renderProps.disabled}
+            text="Sign up with Google"
+            bgColor="#2468eb12"
+          />
+        )}
+        onSuccess={googleSuccess}
+        onFailure={googleFailure}
+        cookiePolicy="single_host_origin"
+      />
+      {/* </form> */}
+      {isSignup ? (
+        <p>
+          Have an account?{" "}
+          <span className="account-alt" onClick={() => setIsSignup(false)}>
+            Login here
+          </span>
+        </p>
+      ) : (
+        <p>
+          Not yet signed up?{" "}
+          <span className="account-alt" onClick={() => setIsSignup(true)}>
+            Create account here
+          </span>
+        </p>
+      )}
+      {/* </div> */}
     </AuthWrapper>
   );
 };

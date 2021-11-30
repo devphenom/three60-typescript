@@ -2,7 +2,7 @@ import React, { FC } from "react";
 import { StyledButton } from "./Button.styles";
 
 interface ButtonProps {
-  text: string;
+  text: any;
   bgColor?: string;
   [x: string]: any;
 }
