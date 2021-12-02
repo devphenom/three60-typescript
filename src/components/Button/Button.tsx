@@ -2,13 +2,14 @@ import React, { FC } from "react";
 import { StyledButton } from "./Button.styles";
 
 interface ButtonProps {
-  text: any;
+  text: string;
   bgColor?: string;
   [x: string]: any;
 }
-const Button: FC<ButtonProps> = ({ text, bgColor, sm, ...other }) => {
+const Button: FC<ButtonProps> = ({ children, text, bgColor, sm, ...other }) => {
   return (
     <StyledButton bgColor={bgColor} {...other} sm={sm}>
+      {children}
       {text}
     </StyledButton>
   );

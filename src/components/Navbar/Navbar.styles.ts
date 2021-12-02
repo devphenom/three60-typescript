@@ -78,7 +78,7 @@ export const StyledNavMenu = styled.ul<NavMenuProps>`
     }
   }
 
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 800px) {
     padding: 10px 0;
     position: fixed;
     z-index: 999;
@@ -136,8 +136,6 @@ export const StyledBurger = styled.div<BurgerProps>`
     .bar:nth-child(3) {
       transform: ${({ open }) =>
         open ? "translateY(-8px) rotate(-45deg)" : "initial"};
-
-      /* transform: translateY(-8px) rotate(-45deg); */
     }
   }
 `;
