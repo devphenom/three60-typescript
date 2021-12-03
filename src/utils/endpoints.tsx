@@ -43,7 +43,6 @@ export const signup = async (
     const { data } = await signUp(formData);
     setUsers(data);
     history.push("/dashboard");
-
     return data;
   } catch (error) {
     if (isAxiosError(error)) {
