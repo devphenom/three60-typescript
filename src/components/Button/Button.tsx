@@ -6,10 +6,10 @@ interface ButtonProps {
   bgColor?: string;
   [x: string]: any;
 }
-const Button: FC<ButtonProps> = ({ children, text, bgColor, sm, ...other }) => {
+const Button: FC<ButtonProps> = ({ icon, text, bgColor, sm, ...other }) => {
   return (
     <StyledButton bgColor={bgColor} {...other} sm={sm}>
-      {children}
+      {icon}
       {text}
     </StyledButton>
   );

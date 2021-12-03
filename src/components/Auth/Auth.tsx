@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import { Formik, Form, Field } from "formik";
 import {
   GoogleLogin,
@@ -10,9 +11,9 @@ import { AuthWrapper } from "./Auth.styles";
 import { Logo } from "../Globals.styles";
 import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
-import { useHistory } from "react-router";
 import { getUsers, setUsers } from "../../utils/utils";
 import Button from "../Button/Button";
+import { GoogleIcon } from "../Icons";
 
 export interface FormData {
   email: string;
@@ -100,6 +101,7 @@ const Auth = () => {
             onClick={renderProps.onClick}
             disabled={renderProps.disabled}
             text="Sign up with Google"
+            icon={<GoogleIcon className="icon" />}
             bgColor="#2468eb12"
           />
         )}
