@@ -23,7 +23,7 @@ const Dashboard = () => {
   return (
     <StyledDashboard>
       <Navbar />
-      {/* {loading ? (
+      {loading ? (
         <> loading </>
       ) : (
         <Switch>
@@ -32,7 +32,7 @@ const Dashboard = () => {
           <Route path={`${url}/links`} component={ComingSoon} />
           <Route path={`${url}/notes`} component={ComingSoon} />
         </Switch>
-      )} */}
+      )}
     </StyledDashboard>
   );
 };

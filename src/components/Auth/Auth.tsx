@@ -11,7 +11,7 @@ import { Logo } from "../Globals.styles";
 import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
 import { useHistory } from "react-router";
-import { getUsers } from "../../utils/utils";
+import { getUsers, setUsers } from "../../utils/utils";
 import Button from "../Button/Button";
 
 export interface FormData {
@@ -39,7 +39,8 @@ const Auth = () => {
       if ("profileObj" in res && "tokenId" in res) {
         const result = res?.profileObj;
         const token = res?.tokenId;
-        localStorage.setItem("user", JSON.stringify({ result, token }));
+        setUsers({ result, token });
+        history.push("/dashboard");
       }
     } catch (error) {
       console.log(error);

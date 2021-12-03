@@ -1,8 +1,8 @@
 interface SetTokenData {
   result: {
-    _id: string;
     email: string;
-    password: string;
+    _id?: string;
+    googleId?: string;
   };
   token: string;
 }
