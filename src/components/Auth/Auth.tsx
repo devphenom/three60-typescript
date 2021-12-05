@@ -91,7 +91,6 @@ const Auth = () => {
             </>
           )}
           <Button text="Submit" />
-          {/* <button type="submit">Submit</button> */}
         </Form>
       </Formik>
       <GoogleLogin

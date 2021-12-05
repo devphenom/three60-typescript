@@ -1,15 +1,13 @@
-import React from "react";
-// import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-// import {
-//   faEdit,
-//   faSquare,
-//   faTrashAlt,
-// } from "@fortawesome/free-regular-svg-icons";
-
 import { getCategory, getDate, getTime, capitalizeTag } from "./todoFunctions";
 // import { Icon } from "../../Globals.styles";
 import { StyledTodo } from "./Todo.styles";
 import { TodoData } from "../../../pages/Todos/Todos";
+import {
+  CompleteIcon,
+  HamburgerIcon,
+  PencilIcon,
+  TrashIcon,
+} from "../../Icons";
 
 interface TodoProps {
   todo: TodoData;
@@ -23,22 +21,21 @@ const Todo = (props: TodoProps) => {
         <p>{todo.name}</p>
         <p>{`Created on ${getDate(todo.date)} at ${getTime(todo.date)}`}</p>
       </div>
-      <span id="tag">
-        {capitalizeTag(todo.tag)}
-        {/* {todo.tag.charAt(0).toUppercase() + todo.tag.slice(1)} */}
-      </span>
+      <span id="tag">{capitalizeTag(todo.tag)}</span>
       <button id="more">
-        {/* <Icon icon={faEllipsisH} color="black" /> */}
-
+        <HamburgerIcon className="icon" />
         <div className="dropdown-content">
           <span className="dropdown-item">
-            {/* <Icon icon={faSquare} /> Mark as complete */}
+            <CompleteIcon />
+            <span> Mark as complete</span>
           </span>
           <span className="dropdown-item">
-            {/* <Icon icon={faEdit} /> Edit */}
+            <PencilIcon />
+            <span>Edit</span>
           </span>
           <span className="dropdown-item">
-            {/* <Icon icon={faTrashAlt} /> Delete */}
+            <TrashIcon />
+            <span>Delete</span>
           </span>
         </div>
       </button>

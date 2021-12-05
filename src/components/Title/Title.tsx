@@ -3,7 +3,7 @@ import { StyledTitle } from "./Title.styles";
 
 interface TitleProps {
   text: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 const Title: FC<TitleProps> = ({ text, children }) => {
   return (

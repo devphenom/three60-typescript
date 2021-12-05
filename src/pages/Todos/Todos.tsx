@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Sidebar from "../../components/TodoComponents/TodoSidebar/Sidebar";
-import { StyledTodos, StyledTodoMain, StyledTodoArea } from "./Todos.styles";
-import Button from "../../components/Button/Button";
+import { StyledTodos, StyledTodoArea, TodoButton } from "./Todos.styles";
+// import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
 import Todo from "../../components/TodoComponents/Todo/Todo";
 import noTodo from "./Group 3.png";
 import TodoAside from "../../components/TodoComponents/TodoAside/TodoAside";
 import Modal from "../../components/TodoComponents/Modal/Modal";
+import { PlusCircleIcon } from "../../components/Icons";
 
 export interface TodoData {
   name: string;
@@ -87,43 +88,38 @@ const Todos = () => {
 
   return (
     <StyledTodos>
-      <StyledTodoMain>
-        <Sidebar />
-        <Button text="Create Note" sm />
-
-        <StyledTodoArea>
-          <Title text="All Todos">
-            <Button
-              onClick={() => setModal((prevModal) => !prevModal)}
-              text="Create Task"
-            />
-          </Title>
-          {todos.length ? (
-            todos.map((todo) => <Todo todo={todo} />)
-          ) : (
-            <div
-              style={{
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                flexDirection: "column",
-                marginTop: "30px",
-              }}
-            >
-              <img src={noTodo} alt="no todo" />
-              <p style={{ margin: "10px auto" }}>No todos at the moment</p>
-            </div>
-          )}
-        </StyledTodoArea>
-        <TodoAside />
-      </StyledTodoMain>
+      <TodoButton
+        text="Create Note"
+        icon={<PlusCircleIcon className="icon" />}
+      />
+      <Sidebar />
+      <StyledTodoArea>
+        <Title text="All Todos"></Title>
+        {todos.length ? (
+          todos.map((todo) => <Todo todo={todo} />)
+        ) : (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexDirection: "column",
+              marginTop: "30px",
+            }}
+          >
+            <img src={noTodo} alt="no todo" />
+            <p style={{ margin: "10px auto" }}>No todos at the moment</p>
+          </div>
+        )}
+      </StyledTodoArea>
+      {/* <TodoAside />
       {modal ? (
         <Modal>
           <div>
             <h1>Modal Opened</h1>
           </div>
         </Modal>
-      ) : null}
+      ) : null} */}
     </StyledTodos>
   );
 };
