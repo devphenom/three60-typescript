@@ -51,7 +51,6 @@ export const StyledSidebar = styled.ul`
   border-radius: 999px;
   font-size: 0.8rem;
   justify-content: space-between;
-  /* padding: 0 1rem; */
   overflow: scroll;
   margin: 0;
 
@@ -79,6 +78,23 @@ export const StyledSidebar = styled.ul`
   }
 
   @media screen and (min-width: 850px) {
+    flex-direction: column;
+    min-height: 70vh;
+    font-size: 0.7rem;
+    margin: 2rem;
+    padding: 1rem 0;
+    overflow: hidden;
+    .nav-item {
+      flex-direction: column;
+      border-bottom: none;
+      border-left: 3px solid aqua;
+      min-width: 60px;
+      margin: 0;
+
+      .number {
+        font-size: 0.8rem;
+      }
+    }
   }
 
   /* height: auto; */

@@ -101,11 +101,10 @@ const Todos = () => {
 
   return (
     <StyledTodos>
-      <TodoButton
-        text="Create Note"
-        icon={<PlusCircleIcon className="icon" />}
-      />
-      <Sidebar />
+      <>
+        <TodoButton text="Create Note" icon={<PlusCircleIcon className="icon" />} />
+        <Sidebar />
+      </>
       <StyledTodoArea>
         <Title text="All Todos"></Title>
         {todos.length ? (

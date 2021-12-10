@@ -19,7 +19,7 @@ export const StyledTodo = styled.div<TodoProps>`
   margin-top: 10px;
   padding: 10px;
   cursor: pointer;
-  width: 100%;
+  flex-basis: 100%;
   flex-wrap: wrap;
 
   #todo {
@@ -82,7 +82,7 @@ export const StyledTodo = styled.div<TodoProps>`
       }
     }
   }
-  @media screen and (max-width: 768px) {
+  @media screen and (min-width: 850px) {
     #todo {
       width: 100%;
     }
