@@ -14,21 +14,20 @@ export const StyledTodos = styled(DashboardLayout)`
 `;
 
 export const TodoButton = styled(Button)`
-  width: 95%;
+  width: 90%;
   font-size: 1rem;
   /* margin: 1rem; */
 `;
 
 export const StyledTodoArea = styled.div`
-  padding-top: 30px;
-  width: 88%;
-  margin-left: 12%;
-  margin-right: 30px;
+  width: 90%;
+  margin: auto;
+  padding: 1rem 0;
 
-  @media screen and (max-width: 768px) {
-    /* flex-direction: column; */
+  /* @media screen and (max-width: 768px) {
+    flex-direction: column;
     width: 100%;
     padding: 25px;
     margin: 0;
-  }
+  } */
 `;

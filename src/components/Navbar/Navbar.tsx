@@ -11,7 +11,7 @@ interface BurgerProps {
 
 export const NavMenu = (props: BurgerProps) => (
   <StyledNavMenu open={props.open}>
-    <li className="nav-item">
+    <li className="nav-item" onClick={props.toggleOpen}>
       <NavLink
         to="/dashboard/todos"
         activeClassName="active"
@@ -21,7 +21,7 @@ export const NavMenu = (props: BurgerProps) => (
         Todos
       </NavLink>{" "}
     </li>
-    <li className="nav-item">
+    <li className="nav-item" onClick={props.toggleOpen}>
       <NavLink
         to="/dashboard/notes"
         activeClassName="active"
@@ -31,7 +31,7 @@ export const NavMenu = (props: BurgerProps) => (
         Notes
       </NavLink>{" "}
     </li>
-    <li className="nav-item">
+    <li className="nav-item" onClick={props.toggleOpen}>
       <NavLink
         to="/dashboard/links"
         activeClassName="active"
@@ -59,7 +59,6 @@ const Navbar = () => {
   const [open, setOpen] = useState<boolean>(false);
   const toggle = () => {
     setOpen(!open);
-    console.log("toggled");
   };
   return (
     <NavWrapper>
@@ -70,7 +69,7 @@ const Navbar = () => {
             <span>three60</span>
           </Logo>
         </NavLink>
-        <NavMenu open={open} />
+        <NavMenu open={open} toggleOpen={toggle} />
         <Hamburger open={open} toggleOpen={toggle} />
       </nav>
     </NavWrapper>

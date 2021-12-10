@@ -57,7 +57,7 @@ export const StyledNavMenu = styled.ul<NavMenuProps>`
         color: #482ff7;
       }
       &.active {
-        border-bottom: 3px solid #482ff7;
+        /* border-bottom: 3px solid #482ff7; */
       }
     }
     &:last-child {
@@ -87,21 +87,23 @@ export const StyledNavMenu = styled.ul<NavMenuProps>`
     background-color: #fff;
     width: 100%;
     border-radius: 10px;
-    text-align: center;
+    /* text-align: center; */
     transition: 0.3s;
     box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
     left: ${({ open }) => (open ? "0" : "-100%")};
 
     .nav-item {
       margin: 1.2rem 0;
-      padding: 10px 0;
+      padding: 0.5rem 1rem;
       &:hover {
         background-color: rgba(70, 115, 228, 0.08);
       }
 
       &:last-child {
         margin: auto;
-        padding: 0;
+        display: flex;
+        padding: 0 10px;
+        align-items: center;
         width: 90%;
       }
     }

@@ -13,6 +13,7 @@ export interface TodoData {
   name: string;
   date: string;
   tag: string;
+  id: number;
 }
 
 const todoData: TodoData[] = [
@@ -20,61 +21,73 @@ const todoData: TodoData[] = [
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "in-progress",
+    id: 1,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "backlog",
+    id: 2,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "completed",
+    id: 3,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "overdue",
+    id: 4,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "trash",
+    id: 5,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "backlog",
+    id: 6,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "completed",
+    id: 7,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "overdue",
+    id: 8,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "in-progress",
+    id: 9,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "in-progress",
+    id: 10,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "in-progress",
+    id: 11,
   },
   {
     name: "Create an endpoint to get the list of users available in the database",
     date: new Date().toDateString(),
     tag: "in-progress",
+    id: 12,
   },
 ];
 

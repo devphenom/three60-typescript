@@ -5,6 +5,8 @@ interface CategoryObj {
 }
 interface TodoProps {
   category: CategoryObj;
+  todoMore: number;
+  _id: number;
 }
 
 export const StyledTodo = styled.div<TodoProps>`
@@ -49,21 +51,24 @@ export const StyledTodo = styled.div<TodoProps>`
     cursor: pointer;
     text-align: center;
     background: none;
+    /* transition: 1s; */
     transition: background 250ms ease-in-out, transform 150ms ease;
     -webkit-appearance: none;
     -moz-appearance: none;
     position: relative;
-    /* z-index: 1; */
 
     .dropdown-content {
-      display: none;
+      /* display: none; */
       position: absolute;
       right: 0;
       background-color: white;
       min-width: 200px;
       box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-      z-index: 1;
+      /* z-index: 1; */
 
+      &.openMore {
+        display: block;
+      }
       .dropdown-item {
         text-align: left;
         color: black;
@@ -75,10 +80,6 @@ export const StyledTodo = styled.div<TodoProps>`
           background: rgba(119, 119, 119, 0.04);
         }
       }
-    }
-
-    &:hover .dropdown-content {
-      display: block;
     }
   }
   @media screen and (max-width: 768px) {
