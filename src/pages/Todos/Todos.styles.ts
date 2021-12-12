@@ -6,11 +6,10 @@ export const StyledTodos = styled(DashboardLayout)`
   display: flex;
   flex-direction: column;
   font-size: 16px;
-
+  /* background-color: white; */
   @media screen and (min-width: 850px) {
     flex-direction: row;
-    width: 100%;
-    /* justify-content: space-; */
+    justify-content: start;
   }
 `;
 
@@ -20,6 +19,15 @@ export const TodoButton = styled(Button)`
   @media screen and (min-width: 850px) {
     display: none;
   }
+
+  &.lg {
+    width: 200px;
+    display: none;
+    @media screen and (min-width: 850px) {
+      display: block;
+      /* margin-left: auto; */
+    }
+  }
 `;
 
 export const StyledTodoArea = styled.div`
@@ -27,11 +35,17 @@ export const StyledTodoArea = styled.div`
   margin: auto;
   padding: 1rem 0;
 
-  @media screen and (max-width: 768px) {
-    /* flex-direction: column;
-    width: 100%;
-    padding: 25px;
-    margin: 0; */
-    flex-basis: 70%;
+  @media screen and (min-width: 850px) {
+    flex-basis: 60%;
+    margin-left: 10%;
+    margin-top: 0;
+  }
+`;
+
+export const SidebarLg = styled.div`
+  @media screen and (min-width: 850px) {
+    flex-basis: 10%;
+    position: fixed;
+    width: inherit;
   }
 `;

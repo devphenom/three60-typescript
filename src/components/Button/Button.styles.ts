@@ -7,10 +7,9 @@ interface ButtonProps {
 
 export const StyledButton = styled.button<ButtonProps>`
   display: block;
-  width: 100%;
-  margin: 1rem auto;
+  width: 200px;
   background: ${({ bgColor }) => bgColor || "#2468eb"};
-  border: 1px solid white;
+  border: 1px solid #2468eb;
   border-radius: 4px;
   color: ${({ bgColor }) => (bgColor ? "#2468eb" : "#fff")};
   height: 3rem;

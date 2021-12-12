@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Sidebar from "../../components/TodoComponents/TodoSidebar/Sidebar";
-import { StyledTodos, StyledTodoArea, TodoButton } from "./Todos.styles";
+import { StyledTodos, SidebarLg, StyledTodoArea, TodoButton } from "./Todos.styles";
 // import Button from "../../components/Button/Button";
 import Title from "../../components/Title/Title";
 import Todo from "../../components/TodoComponents/Todo/Todo";
@@ -8,6 +8,7 @@ import noTodo from "./Group 3.png";
 import TodoAside from "../../components/TodoComponents/TodoAside/TodoAside";
 import Modal from "../../components/TodoComponents/Modal/Modal";
 import { PlusCircleIcon } from "../../components/Icons";
+import Button from "../../components/Button/Button";
 
 export interface TodoData {
   name: string;
@@ -101,12 +102,14 @@ const Todos = () => {
 
   return (
     <StyledTodos>
-      <>
+      <SidebarLg>
         <TodoButton text="Create Note" icon={<PlusCircleIcon className="icon" />} />
         <Sidebar />
-      </>
+      </SidebarLg>
       <StyledTodoArea>
-        <Title text="All Todos"></Title>
+        <Title text="All Todos">
+          <TodoButton text="Create Note" className="lg" icon={<PlusCircleIcon className="icon" />} />
+        </Title>
         {todos.length ? (
           todos.map((todo) => <Todo todo={todo} />)
         ) : (
@@ -124,8 +127,9 @@ const Todos = () => {
           </div>
         )}
       </StyledTodoArea>
-      {/* <TodoAside />
-      {modal ? (
+
+      <TodoAside />
+      {/*   {modal ? (
         <Modal>
           <div>
             <h1>Modal Opened</h1>

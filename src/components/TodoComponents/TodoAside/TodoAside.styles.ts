@@ -1,12 +1,17 @@
 import styled from "styled-components";
 
 export const StyledPreview = styled.aside`
-  background-color: white;
-  width: 30%;
-  text-align: center;
-  padding-top: 40px;
+  display: none;
 
-  @media screen and (max-width: 768px) {
-    display: none;
+  @media screen and (min-width: 850px) {
+    display: flex;
+    align-items: center;
+    flex-basis: 30%;
+    margin-left: 1.5rem;
+    background-color: white;
+    text-align: center;
+    padding: 1rem;
+    max-height: 100%;
+    overflow-y: scroll;
   }
 `;
