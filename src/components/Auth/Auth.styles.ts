@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../Button/Button";
 
 export const AuthWrapper = styled.section`
   background-color: white;
@@ -35,4 +36,9 @@ export const AuthWrapper = styled.section`
   @media screen and (min-width: 850px) {
     flex-basis: 50%;
   }
+`;
+
+export const AuthButton = styled(Button)`
+  width: 100%;
+  margin: 1rem auto;
 `;

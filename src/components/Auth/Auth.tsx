@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { Formik, Form, Field } from "formik";
-import {
-  GoogleLogin,
-  GoogleLoginResponse,
-  GoogleLoginResponseOffline,
-} from "react-google-login";
+import { GoogleLogin, GoogleLoginResponse, GoogleLoginResponseOffline } from "react-google-login";
 
-import { AuthWrapper } from "./Auth.styles";
+import { AuthWrapper, AuthButton } from "./Auth.styles";
 import { Logo } from "../Globals.styles";
 import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
@@ -33,9 +29,7 @@ const Auth = () => {
     }
   };
 
-  const googleSuccess = async (
-    res: GoogleLoginResponse | GoogleLoginResponseOffline
-  ) => {
+  const googleSuccess = async (res: GoogleLoginResponse | GoogleLoginResponseOffline) => {
     try {
       if ("profileObj" in res && "tokenId" in res) {
         const result = res?.profileObj;
@@ -71,10 +65,7 @@ const Auth = () => {
         {!isSignup && <p>Enter your credentials</p>}
       </div>
       {/* form */}
-      <Formik
-        onSubmit={onSubmit}
-        initialValues={{ email: "", password: "", confirmPassword: "" }}
-      >
+      <Formik onSubmit={onSubmit} initialValues={{ email: "", password: "", confirmPassword: "" }}>
         <Form>
           <label htmlFor="email">Email</label>
           <Field name="email" placeholder="johndoe@gmail.com" />
@@ -83,27 +74,15 @@ const Auth = () => {
           {isSignup && (
             <>
               <label htmlFor="password">Confirm Password</label>
-              <Field
-                type="password"
-                name="confirmPassword"
-                placeholder="********"
-              />
+              <Field type="password" name="confirmPassword" placeholder="********" />
             </>
           )}
-          <Button text="Submit" />
+          <AuthButton text="Submit" />
         </Form>
       </Formik>
       <GoogleLogin
         clientId={`${process.env.REACT_APP_CLIENT_ID}`}
-        render={(renderProps) => (
-          <Button
-            onClick={renderProps.onClick}
-            disabled={renderProps.disabled}
-            text="Sign up with Google"
-            icon={<GoogleIcon className="icon" />}
-            bgColor="#2468eb12"
-          />
-        )}
+        render={(renderProps) => <AuthButton onClick={renderProps.onClick} disabled={renderProps.disabled} text="Sign up with Google" icon={<GoogleIcon className="icon" />} bgColor="#2468eb12" />}
         onSuccess={googleSuccess}
         onFailure={googleFailure}
         cookiePolicy="single_host_origin"
