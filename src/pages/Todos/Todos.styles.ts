@@ -6,7 +6,6 @@ export const StyledTodos = styled(DashboardLayout)`
   display: flex;
   flex-direction: column;
   font-size: 16px;
-  /* background-color: white; */
   @media screen and (min-width: 850px) {
     flex-direction: row;
     justify-content: start;
@@ -16,6 +15,7 @@ export const StyledTodos = styled(DashboardLayout)`
 export const TodoButton = styled(Button)`
   width: 90%;
   font-size: 1rem;
+  margin: 1rem;
   @media screen and (min-width: 850px) {
     display: none;
   }
@@ -25,7 +25,7 @@ export const TodoButton = styled(Button)`
     display: none;
     @media screen and (min-width: 850px) {
       display: block;
-      /* margin-left: auto; */
+      margin: 0;
     }
   }
 `;
