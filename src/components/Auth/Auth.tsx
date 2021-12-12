@@ -8,7 +8,6 @@ import { Logo } from "../Globals.styles";
 import LogoImg from "./three60.png";
 import { signin, signup } from "../../utils/endpoints";
 import { getUsers, setUsers } from "../../utils/utils";
-import Button from "../Button/Button";
 import { GoogleIcon } from "../Icons";
 
 export interface FormData {
